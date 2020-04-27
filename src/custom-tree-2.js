@@ -9,7 +9,6 @@ class Parent extends Component {
   constructor(props) {
      super(props);
      this.state = {
-      
      };
  }
  render () {
@@ -30,18 +29,19 @@ class App extends Component {
   constructor(props) {
       super(props);
       this.state = {
-       
+        noLeftMargin:true
       };
   }
 
   render() {
     return (<div className="tree-sample">
+      <button onClick={() => this.setState({noLeftMargin: !this.state.noLeftMargin})}>{this.state.noLeftMargin ? 'Add' : 'Remove'} left margin</button>
       <Tree
         data={data}
         onChidClick={(child) => console.log(child)}
         parentComponent={Parent}
         childComponent={Child}
-        noLeftMargin={true}
+        noLeftMargin={this.state.noLeftMargin}
         />
                             
     </div>)

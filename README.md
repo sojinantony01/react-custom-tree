@@ -160,7 +160,7 @@ class App extends Component {
 
 export default App;
 ```
-
+Check live demo for examples
 
 [Sojin Antony](https://github.com/sojinantony01)
 

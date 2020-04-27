@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import SimpleTree from './simple-tree';
 import CustomTree from './custom-tree';
 import CustomTreeTwo from './custom-tree-2';
-import CustomTreeThree from './custom-tree-3'
 import './app.css'
 class App extends Component {
 
@@ -24,8 +23,7 @@ class App extends Component {
         <CustomTree />
         <h2>Custom Parent & Child Component 2</h2>   
         <CustomTreeTwo />
-        <h2>Custom Parent & Child Component 3</h2>   
-        <CustomTreeThree />
+
       </div>)
   }
 }
