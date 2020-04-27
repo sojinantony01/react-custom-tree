@@ -6,6 +6,7 @@ A react customizable tree component
 Package helps to build tree view using predefined JSON.
 Supports custom child components
 
+Sample JSON
 ```
 data = [
     {
@@ -61,15 +62,11 @@ npm install react-tree
 ## demo
 [Live demo](https://sojinantony01.github.io/react-tree/)
 
-![alt text](https://raw.githubusercontent.com/sojinantony01/react-cron-generator/master/public/images/Screenshot%20from%202019-06-08%2000-31-31.png)
 
-![alt text](https://raw.githubusercontent.com/sojinantony01/react-cron-generator/master/public/images/Screenshot%20from%202019-06-08%2000-31-57.png)
-
-
+Basic usage
 ```
 import React, { Component } from 'react'
 import Tree from 'react-tree'
-import 'react-tree/dist/tree.css'
 
 
 class App extends Component {
@@ -104,6 +101,13 @@ export default App;
 | childComponent | Custom child component | Inbuilt component | No
 | parentComponent | Custom Parent component | Inbuilt component | No
 | isDefaultOpen | Open all parent components in tree | false | No
+| noLeftMargin | remove parent and child left margin | false | No
+
+
+
+Custom  Child and Parent Component sample
+
+
 
 
 

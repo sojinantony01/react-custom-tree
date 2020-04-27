@@ -1,70 +1,9 @@
 import React, { Component } from 'react'
-import Tree from './lib'
-import './lib/tree.css'
-
-const data = [
-  {
-      id: 1,
-      name:'Parent 1',
-      child: [
-          {
-              id: 1,
-              name:'Parent 1.1',
-              child: [
-                  {
-                      id: 2,
-                      name:'Child 1',
-                  }
-              ]
-          },
-          {
-              id: 2,
-              name:'Parent 1.2',
-              description:'',
-              value:'',
-              child: [
-                  {
-                      id: 3,
-                      name:'Chid 2',
-                  },
-                  {
-                      id: 4,
-                      name:'Chid 3',
-                  },
-                  {
-                      id: 5,
-                      name:'Chid 4',
-                  }
-              ]
-          }
-      ]
-  },
-  {
-      id: 6,
-      name:'Parent 2',
-      child: []
-  }
-]
-
-const Child = props => <span>{props.name}</span>
-
-class Parent extends Component {
-  constructor(props) {
-     super(props);
-     this.state = {
-      
-     };
- }
- render () {
-    return (
-      <div>
-        {this.props.name}
-      </div>
-    )
- }
-}
-
-
+import SimpleTree from './simple-tree';
+import CustomTree from './custom-tree';
+import CustomTreeTwo from './custom-tree-2';
+import CustomTreeThree from './custom-tree-3'
+import './app.css'
 class App extends Component {
 
   constructor(props) {
@@ -75,16 +14,19 @@ class App extends Component {
   }
 
   render() {
-    return (<div>
-      <Tree
-        data={data}
-        onChidClick={(child) => console.log(child)}
-        parentComponent={Parent}
-        childComponent={Child}
-        isDefaultOpen={true}
-        />
-                            
-    </div>)
+    return (
+      <div className="container">
+        <h2>Simple Usage</h2>
+        <SimpleTree />
+        <h2>Default Open</h2>
+        <SimpleTree open/>
+        <h2>Custom Parent & Child Component 1</h2>   
+        <CustomTree />
+        <h2>Custom Parent & Child Component 2</h2>   
+        <CustomTreeTwo />
+        <h2>Custom Parent & Child Component 3</h2>   
+        <CustomTreeThree />
+      </div>)
   }
 }
 

@@ -1,3 +1,16 @@
-.tree-margin-left-10 {
-    margin-left: 10px;
+.tree-margin-left-15 {
+    margin-left: 15px;
+}
+
+.tree-child-component {
+    margin: 3px 10px;
+    cursor: pointer;
+}
+.tree-parent-component > span:nth-of-type(1) {
+    border: 1px solid #ddd;
+    margin: 2px 5px;
+    width: 15px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
 }

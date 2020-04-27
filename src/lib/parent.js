@@ -15,9 +15,9 @@ class Parent extends Component {
         return  ( 
             <div className="" >
                 <div onClick={() => this.setState({open : !this.state.open})}>
-                {this.props.custom ? <Custom {...this.props.data}/> : 
-                    <div >
-                        <span>{this.state.open ? '-' : '+'}</span>
+                {this.props.custom ? <Custom {...this.props.data} open={this.state.open}/> : 
+                    <div className="tree-parent-component">
+                        <span >{this.state.open ? '-' : '+'}</span>
                         <span>{this.props.data.name}</span>
                     </div>
                 }
