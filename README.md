@@ -68,14 +68,14 @@ npm install react-custom-tree
 ```
 import React, { Component } from 'react'
 import Tree from 'react-custom-tree'
-
+import data from './data.json'
 
 class App extends Component {
 
   constructor(props) {
       super(props);
       this.state = {
-       
+        data:data
       };
   }
 
@@ -104,10 +104,7 @@ export default App;
 | isDefaultOpen | Open all parent components in tree | false | No
 | noLeftMargin | remove parent and child left margin | false | No
 
-
-
 ## Custom  Child and Parent Component sample
-
 
 ```
 import React, { Component } from 'react'
@@ -161,7 +158,9 @@ class App extends Component {
 
 export default App;
 ```
+
 Check live demo for examples
+[Live demo](https://sojinantony01.github.io/react-custom-tree/)
 
 [Sojin Antony](https://github.com/sojinantony01)
 
