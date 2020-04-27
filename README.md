@@ -1,12 +1,16 @@
-# react-tree
+# react-custom-tree
 A react customizable tree component
 
 ## Getting Started
 
 Package helps to build tree view using predefined JSON.
-Supports custom child components
+Supports custom child and parent components
 
-Sample JSON
+## Demo
+[Live demo](https://sojinantony01.github.io/react-custom-tree/)
+
+
+### Sample JSON
 ```
 data = [
     {
@@ -56,17 +60,14 @@ data = [
 ]
 ```
 ```
-npm install react-tree
+npm install react-custom-tree
 
 ```
-## demo
-[Live demo](https://sojinantony01.github.io/react-tree/)
 
-
-Basic usage
+## Basic usage
 ```
 import React, { Component } from 'react'
-import Tree from 'react-tree'
+import Tree from 'react-custom-tree'
 
 
 class App extends Component {
@@ -105,12 +106,12 @@ export default App;
 
 
 
-Custom  Child and Parent Component sample
+## Custom  Child and Parent Component sample
 
 
 ```
 import React, { Component } from 'react'
-import Tree from './react-tree';
+import Tree from 'react-custom-tree';
 import data from './data.json'
 
 

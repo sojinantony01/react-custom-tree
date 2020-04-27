@@ -1,6 +1,6 @@
 {
-  "name": "react-tree",
-  "version": "1.0.0",
+  "name": "react-custom-tree",
+  "version": "1.0.1",
   "description": "Fully customizable tree ui component",
   "keywords": [
     "react tree",
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sojinantony01/react-tree.git"
+    "url": "https://github.com/sojinantony01/react-custom-tree.git"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -30,7 +30,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
-  "homepage": "https://sojinantony01.github.io/react-tree",
+  "homepage": "https://sojinantony01.github.io/react-custom-tree",
   "scripts": {
     "start": "react-scripts start",
     "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
