@@ -1,10 +1,11 @@
 # react-custom-tree
-A react customizable tree component
+A fully customizable tree component
 
 ## Getting Started
 
-Package helps to build tree view using predefined JSON.
-Supports custom child and parent components
+Component helps to build tree structure view in your design using predefined JSON.
+Supports custom child and parent components.
+
 
 ## Demo
 [Live demo](https://sojinantony01.github.io/react-custom-tree/)
