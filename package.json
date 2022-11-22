@@ -22,13 +22,13 @@
     "@babel/core": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.5.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "^3.0.0"
+    "react": "^18.0.1",
+    "react-dom": "^18.0.1",
+    "react-scripts": "^5.0.1"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": ">=16.8.6",
+    "react-dom": ">=16.8.6"
   },
   "homepage": "https://sojinantony01.github.io/react-custom-tree",
   "scripts": {
