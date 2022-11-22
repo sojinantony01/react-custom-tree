@@ -20,13 +20,13 @@ class Tree extends Component {
         return data.map(d => {
             if(d.child && d.child.length) {
                 return  (
-                    <div className={this.props.noLeftMargin ? '' : 'tree-margin-left-15'}>
+                    <div className={this.props.noLeftMargin ? '' : 'tree-margin-left-15'} key={d.id}>
                         <Parent {...this.props} data={d} custom={this.props.parentComponent} />
                     </div>  
                     )
             } else {
                 return (
-                    <div className={this.props.noLeftMargin ? '' : 'tree-margin-left-15'}>
+                    <div className={this.props.noLeftMargin ? '' : 'tree-margin-left-15'} key={d.id}>
                         <Child onChidClick={this.props.onChidClick} data={d} custom={this.props.childComponent}/>
                     </div>
                 )

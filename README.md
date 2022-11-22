@@ -126,7 +126,7 @@ class Parent extends Component {
     return (
       <div className="custom-parent">
         <span className="custom-open-icon">
-          {this.props.open ? <i class="fa fa-caret-down" aria-hidden="true"></i> : <i class="fa fa-caret-right" aria-hidden="true"></i>}
+          {this.props.open ? <i className="fa fa-caret-down" aria-hidden="true"></i> : <i className="fa fa-caret-right" aria-hidden="true"></i>}
         </span>
         {this.props.name}
       </div>
