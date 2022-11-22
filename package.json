@@ -1,6 +1,6 @@
 {
   "name": "react-custom-tree",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Fully customizable tree ui component",
   "keywords": [
     "react tree",
@@ -37,7 +37,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
-    "react-build": "react-scripts build"
+    "prepublishOnly": "npm run build",
+    "predeploy": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
