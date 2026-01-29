@@ -1,6 +1,6 @@
 {
   "name": "react-custom-tree",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Fully customizable tree UI component for React with recursive rendering",
   "keywords": [
     "react",

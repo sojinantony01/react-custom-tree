@@ -5,6 +5,12 @@
 
 A fully customizable, recursive tree component for React with support for custom parent and child components.
 
+## 🌐 Live Demo
+
+**[View Live Demo →](https://sojinantony01.github.io/react-custom-tree/)**
+
+Check out the interactive demo to see the component in action with various configurations and examples!
+
 ## ✨ Features
 
 - 🎨 **Fully Customizable** - Bring your own components for parents and children
