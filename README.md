@@ -1,170 +1,323 @@
-# react-custom-tree
-A fully customizable tree component
+# React Custom Tree
 
-## Getting Started
+[![npm version](https://img.shields.io/npm/v/react-custom-tree.svg)](https://www.npmjs.com/package/react-custom-tree)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
-Component helps to build tree structure view in your design using predefined JSON.
-Supports custom child and parent components.
+A fully customizable, recursive tree component for React with support for custom parent and child components.
 
+## ✨ Features
 
-## Demo
-[Live demo](https://sojinantony01.github.io/react-custom-tree/)
+- 🎨 **Fully Customizable** - Bring your own components for parents and children
+- 🔄 **Recursive Rendering** - Handles deeply nested tree structures
+- ⚡ **Lightweight** - Minimal dependencies
+- 🎯 **TypeScript Ready** - Written with modern React patterns
+- 📦 **Easy to Use** - Simple API with sensible defaults
+- 🎭 **Flexible Styling** - Control margins and layout
+- 🔌 **Event Handling** - Built-in click handlers for child nodes
 
+## 📦 Installation
 
-### Sample JSON
+```bash
+npm install react-custom-tree
 ```
-data = [
-    {
-        id: 1,
-        name:'Parent 1',
-        child: [
-            {
-                id: 1,
-                name:'Parent 1.1',
-                ...
-                child: [
-                    {
-                        id: 2,
-                        name:'Child 1',
-                    }
-                ]
-            },
-            {
-                id: 2,
-                name:'Parent 1.2',
-                description:'',
-                value:'',
-                ...
-                child: [
-                    {
-                        id: 3,
-                        name:'Chid 2',
-                    },
-                    {
-                        id: 4,
-                        name:'Chid 3',
-                    },
-                    {
-                        id: 5,
-                        name:'Chid 4',
-                    }
-                ]
-            }
+
+or
+
+```bash
+yarn add react-custom-tree
+```
+
+## 🚀 Quick Start
+
+```jsx
+import React from 'react';
+import Tree from 'react-custom-tree';
+
+const data = [
+  {
+    id: 1,
+    name: 'Parent 1',
+    child: [
+      {
+        id: 2,
+        name: 'Child 1'
+      },
+      {
+        id: 3,
+        name: 'Child 2'
+      }
+    ]
+  }
+];
+
+function App() {
+  return (
+    <Tree
+      data={data}
+      onChidClick={(child) => console.log('Clicked:', child)}
+    />
+  );
+}
+
+export default App;
+```
+
+## 📖 API Reference
+
+### Props
+
+| Prop | Type | Default | Required | Description |
+|------|------|---------|----------|-------------|
+| `data` | `Array` | `[]` | ✅ | Array of tree node objects |
+| `onChidClick` | `Function` | `undefined` | ❌ | Callback fired when a child node is clicked |
+| `childComponent` | `Component` | Built-in | ❌ | Custom component for rendering child nodes |
+| `parentComponent` | `Component` | Built-in | ❌ | Custom component for rendering parent nodes |
+| `isDefaultOpen` | `Boolean` | `false` | ❌ | Whether parent nodes are expanded by default |
+| `noLeftMargin` | `Boolean` | `false` | ❌ | Remove left margin from tree nodes |
+
+### Data Structure
+
+Each node in the data array should follow this structure:
+
+```javascript
+{
+  id: number | string,        // Unique identifier (required)
+  name: string,               // Display name (required)
+  child: Array,               // Array of child nodes (optional)
+  // ... any other custom properties
+}
+```
+
+## 💡 Examples
+
+### Basic Usage
+
+```jsx
+import React from 'react';
+import Tree from 'react-custom-tree';
+import data from './data.json';
+
+function BasicExample() {
+  return (
+    <Tree
+      data={data}
+      onChidClick={(child) => console.log(child)}
+    />
+  );
+}
+```
+
+### Default Open State
+
+```jsx
+function DefaultOpenExample() {
+  return (
+    <Tree
+      data={data}
+      isDefaultOpen={true}
+      onChidClick={(child) => console.log(child)}
+    />
+  );
+}
+```
+
+### Custom Components
+
+```jsx
+import React from 'react';
+import Tree from 'react-custom-tree';
+import data from './data.json';
+
+// Custom child component
+const CustomChild = (props) => (
+  <div className="custom-child">
+    📄 {props.name}
+  </div>
+);
+
+// Custom parent component
+const CustomParent = (props) => (
+  <div className="custom-parent">
+    <span className="icon">
+      {props.open ? '📂' : '📁'}
+    </span>
+    <span className="name">{props.name}</span>
+  </div>
+);
+
+function CustomExample() {
+  return (
+    <Tree
+      data={data}
+      onChidClick={(child) => console.log(child)}
+      parentComponent={CustomParent}
+      childComponent={CustomChild}
+    />
+  );
+}
+```
+
+### With Font Awesome Icons
+
+```jsx
+const CustomParent = (props) => (
+  <div className="custom-parent">
+    <span className="icon">
+      {props.open ? (
+        <i className="fa fa-caret-down" aria-hidden="true"></i>
+      ) : (
+        <i className="fa fa-caret-right" aria-hidden="true"></i>
+      )}
+    </span>
+    {props.name}
+  </div>
+);
+
+function FontAwesomeExample() {
+  return (
+    <Tree
+      data={data}
+      parentComponent={CustomParent}
+      onChidClick={(child) => console.log(child)}
+    />
+  );
+}
+```
+
+### Without Left Margin
+
+```jsx
+function NoMarginExample() {
+  return (
+    <Tree
+      data={data}
+      noLeftMargin={true}
+      onChidClick={(child) => console.log(child)}
+    />
+  );
+}
+```
+
+## 🎨 Styling
+
+The component comes with minimal default styles. You can override them by targeting these CSS classes:
+
+```css
+.tree-margin-left-15 {
+  margin-left: 15px;
+}
+
+.tree-parent-component {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.tree-child-component {
+  cursor: pointer;
+  padding: 5px;
+}
+```
+
+## 📝 Sample Data Structure
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Parent 1",
+    "child": [
+      {
+        "id": 2,
+        "name": "Parent 1.1",
+        "child": [
+          {
+            "id": 3,
+            "name": "Child 1"
+          }
         ]
-    },
-    {
-        id: 6,
-        name:'Parent 2',
-        ...
-        child: []
-    }
+      },
+      {
+        "id": 4,
+        "name": "Parent 1.2",
+        "child": [
+          {
+            "id": 5,
+            "name": "Child 2"
+          },
+          {
+            "id": 6,
+            "name": "Child 3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Parent 2",
+    "child": []
+  }
 ]
 ```
-```
-npm install react-custom-tree
 
-```
+## 🌐 Live Demo
 
-## Basic usage
-```
-import React, { Component } from 'react'
-import Tree from 'react-custom-tree'
-import data from './data.json'
+Check out the [live demo](https://sojinantony01.github.io/react-custom-tree/) to see the component in action with various configurations.
 
-class App extends Component {
+## 🤝 Contributing
 
-  constructor(props) {
-      super(props);
-      this.state = {
-        data:data
-      };
-  }
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-  render() {
-    return (<div>
-      <Tree
-        data={this.state.data}
-        onChidClick={(child) => console.log(child)}
-        />
-                            
-    </div>)
-  }
-}
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-export default App;
+## 📄 License
 
-```
-## props
+This project is licensed under the ISC License.
 
-| Prop | Description | Default | Mandatory
-| --- | --- | -- | -- |
-| data | JSON Data   | [] |  Yes |
-| onChidClick | Handle child click |  non clickable | No
-| childComponent | Custom child component | Inbuilt component | No
-| parentComponent | Custom Parent component | Inbuilt component | No
-| isDefaultOpen | Open all parent components in tree | false | No
-| noLeftMargin | remove parent and child left margin | false | No
+## 👨‍💻 Author
 
-## Custom  Child and Parent Component sample
+**Sojin Antony**
 
-```
-import React, { Component } from 'react'
-import Tree from 'react-custom-tree';
-import data from './data.json'
+- GitHub: [@sojinantony01](https://github.com/sojinantony01)
+- npm: [react-custom-tree](https://www.npmjs.com/package/react-custom-tree)
 
+## 🙏 Acknowledgments
 
-const Child = props => <div className='custom-child'>{props.name}</div>
+Special thanks to [Viswanath Lekshmanan](https://viswanathl.in/) for contributions and support.
 
-class Parent extends Component {
-  constructor(props) {
-     super(props);
-     this.state = {
-      
-     };
- }
- render () {
-    return (
-      <div className="custom-parent">
-        <span className="custom-open-icon">
-          {this.props.open ? <i className="fa fa-caret-down" aria-hidden="true"></i> : <i className="fa fa-caret-right" aria-hidden="true"></i>}
-        </span>
-        {this.props.name}
-      </div>
-    )
- }
-}
+## 📊 Browser Support
 
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-class App extends Component {
+## ⚙️ Requirements
 
-  constructor(props) {
-      super(props);
-      this.state = {
-       
-      };
-  }
+- React >= 16.8.0 (hooks support required)
+- React-DOM >= 16.8.0
 
-  render() {
-    return (<div className="tree-sample">
-      <Tree
-        data={data}
-        onChidClick={(child) => console.log(child)}
-        parentComponent={Parent}
-        childComponent={Child}
-        />
-                            
-    </div>)
-  }
-}
+**Note:** While the package works with React 16.8.0+, we recommend using React 18+ for optimal performance and latest features.
 
-export default App;
-```
+## 🔄 Changelog
 
-Check live demo for examples
-[Live demo](https://sojinantony01.github.io/react-custom-tree/)
+### Version 2.0.0
+- ✨ Modernized with React functional components and hooks
+- 🔄 Maintained backward compatibility with React 16.8.0+
+- 📚 Enhanced documentation with comprehensive examples
+- 🎨 Improved demo with modern UI and more examples
+- 🚀 Added GitHub Actions for automated deployment
+- 🎯 Better TypeScript support and modern patterns
 
-[Sojin Antony](https://github.com/sojinantony01)
+### Version 1.0.5
+- Initial stable release
+- Basic tree functionality
+- Custom component support
 
-## Acknowledgments
+---
 
-[Viswanath Lekshmanan](https://viswanathl.in/)
+Made with ❤️ by [Sojin Antony](https://github.com/sojinantony01)

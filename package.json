@@ -1,14 +1,21 @@
 {
   "name": "react-custom-tree",
-  "version": "1.0.5",
-  "description": "Fully customizable tree ui component",
+  "version": "3.0.0",
+  "description": "Fully customizable tree UI component for React with recursive rendering",
   "keywords": [
-    "react tree",
-    "react customizable tree"
+    "react",
+    "tree",
+    "react-tree",
+    "tree-view",
+    "customizable-tree",
+    "recursive-tree",
+    "ui-component",
+    "react-component"
   ],
-  "author": "Sojin antony",
+  "author": "Sojin Antony",
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "README.md"
@@ -18,42 +25,35 @@
     "url": "https://github.com/sojinantony01/react-custom-tree.git"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.4",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/runtime": "^7.5.1",
-    "react": "^18.0.1",
-    "react-dom": "^18.0.1",
-    "react-scripts": "^5.0.1"
+    "@babel/core": "^7.24.0",
+    "@babel/preset-react": "^7.24.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "gh-pages": "^6.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rollup": "^4.24.4",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "vite": "^5.4.11"
   },
   "peerDependencies": {
-    "react": ">=16.8.6",
-    "react-dom": ">=16.8.6"
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "homepage": "https://sojinantony01.github.io/react-custom-tree",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build",
-    "prepublishOnly": "npm run build",
-    "predeploy": "react-scripts build"
+    "dev": "vite",
+    "build": "rollup -c",
+    "build:demo": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build:demo && gh-pages -d dist-demo",
+    "prepublishOnly": "npm run build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "license": "ISC",
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "license": "ISC"
 }

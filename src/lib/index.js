@@ -1,3 +1,3 @@
-import Tree from './lib';
+import Tree from './lib.jsx';
 import './tree.css'
 export default Tree;
