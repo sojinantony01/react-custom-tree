@@ -1,6 +1,6 @@
 {
   "name": "react-custom-tree",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Fully customizable tree UI component for React with recursive rendering",
   "keywords": [
     "react",
@@ -25,22 +25,22 @@
     "url": "https://github.com/sojinantony01/react-custom-tree.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.0",
-    "@babel/preset-react": "^7.24.0",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
     "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.3",
-    "gh-pages": "^6.1.1",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^1.0.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^5.0.0",
+    "gh-pages": "^6.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "rollup": "^4.24.4",
+    "rollup": "^4.30.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "vite": "^8.0.8"
+    "vite": "^6.0.11"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
